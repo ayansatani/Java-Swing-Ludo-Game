@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class GameBoard extends JPanel {
     private static final long serialVersionUID = 1L;
-	private static final int BOARD_SIZE = 15; // Example size
+	private static final int BOARD_SIZE = 15; // create a 15x15 grid to work on
 
     public GameBoard() {
         setPreferredSize(new Dimension(600, 600));
@@ -62,10 +62,8 @@ public class GameBoard extends JPanel {
         g.fillRect(9*cellSize, 7*cellSize, 5*cellSize, cellSize);
 
         
-        //home
+        //home (center)
         g.setColor(Color.WHITE);
     	g.fillRect(6*cellSize, 6*cellSize, 3*cellSize, 3*cellSize);
-
-        g.setColor(Color.BLACK);
     }
 }
