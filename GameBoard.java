@@ -5,11 +5,21 @@ import java.awt.*;
 
 public class GameBoard extends JPanel {
     private static final long serialVersionUID = 1L;
-	private static final int BOARD_SIZE = 15; // create a 15x15 grid to work on
+    private static final int BOARD_SIZE = 15;
+
+    private RedHomeBase redHomeBase;
+    private GreenHomeBase greenHomeBase;
+    private YellowHomeBase yellowHomeBase;
+    private BlueHomeBase blueHomeBase;
 
     public GameBoard() {
-        setPreferredSize(new Dimension(600, 600));
+        setPreferredSize(new Dimension(800, 800));
         setBackground(Color.WHITE);
+
+        redHomeBase = new RedHomeBase();
+        greenHomeBase = new GreenHomeBase();
+        yellowHomeBase = new YellowHomeBase();
+        blueHomeBase = new BlueHomeBase();
     }
 
     @Override
@@ -27,43 +37,28 @@ public class GameBoard extends JPanel {
             }
         }
 
-        // Draw home bases, start positions, and other elements
-        drawHomeBases(g, cellSize);
+        redHomeBase.draw(g, cellSize);
+        greenHomeBase.draw(g, cellSize);
+        yellowHomeBase.draw(g, cellSize);
+        blueHomeBase.draw(g, cellSize);
+
+        drawHome(g, cellSize);
     }
 
-    private void drawHomeBases(Graphics g, int cellSize) {
-    	
-    	//red
-        g.setColor(new Color(235,28,36));
-        g.fillRect(0, 0, 6 * cellSize, 6 * cellSize);
-        g.fillRect(1*cellSize, 6*cellSize, cellSize, cellSize);
-        g.fillRect(1*cellSize, 7*cellSize, 5*cellSize, cellSize);
-        
-
-        //green
-        g.setColor(new Color(2,160,75));
-        g.fillRect(9 * cellSize, 0, 6 * cellSize, 6 * cellSize);
-        g.fillRect(8*cellSize, 1*cellSize, cellSize, cellSize);
-        g.fillRect(7*cellSize, 1*cellSize, cellSize, 5*cellSize);
-
-
-        //yellow
-        g.setColor(new Color(255,224,19));
-        g.fillRect(0, 9 * cellSize, 6 * cellSize, 6 * cellSize);
-        g.fillRect(6*cellSize, 13*cellSize, cellSize, cellSize);
-        g.fillRect(7*cellSize, 9*cellSize, cellSize, 5*cellSize);
-
-
-
-        //blue
-        g.setColor(new Color(34,64,154));
-        g.fillRect(9 * cellSize, 9 * cellSize, 6 * cellSize, 6 * cellSize);
-        g.fillRect(13*cellSize, 8*cellSize, cellSize, cellSize);
-        g.fillRect(9*cellSize, 7*cellSize, 5*cellSize, cellSize);
-
-        
-        //home (center)
+    private void drawHome(Graphics g, int cellSize) {
         g.setColor(Color.WHITE);
-    	g.fillRect(6*cellSize, 6*cellSize, 3*cellSize, 3*cellSize);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                g.fillRect((6 + i) * cellSize, (6 + j) * cellSize, cellSize, cellSize);
+            }
+        }
+        g.setColor(Color.BLACK);
+        Font font = new Font("Arial", Font.BOLD, cellSize);
+        g.setFont(font);
+        FontMetrics metrics = g.getFontMetrics(font);
+        String text = "HOME";
+        int x = (getWidth() - metrics.stringWidth(text)) / 2;
+        int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
+        g.drawString(text, x, y);
     }
 }
