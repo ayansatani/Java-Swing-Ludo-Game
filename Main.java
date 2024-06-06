@@ -29,7 +29,7 @@ public class Main {
         // Create a split pane to separate the game board and right panel
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, gameBoard, rightPanel);
         splitPane.setDividerLocation(800); // Initial divider location
-        splitPane.setEnabled(true); // Prevents the user from changing the divider location
+        splitPane.setEnabled(false); // Prevents the user from changing the divider location
 
         frame.setJMenuBar(menu.getMenuBar());
         frame.getContentPane().add(splitPane);
