@@ -23,11 +23,14 @@ public class Main {
 
         JFrame frame = new JFrame("Ludo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ImageIcon logo = new ImageIcon("Ludo_icon.png");
+        
+        frame.setIconImage(logo.getImage());
 
         // Create a split pane to separate the game board and right panel
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, gameBoard, rightPanel);
         splitPane.setDividerLocation(800); // Initial divider location
-        splitPane.setEnabled(false); // Prevents the user from changing the divider location
+        splitPane.setEnabled(true); // Prevents the user from changing the divider location
 
         frame.setJMenuBar(menu.getMenuBar());
         frame.getContentPane().add(splitPane);
