@@ -24,7 +24,6 @@ public class Main {
         JFrame frame = new JFrame("Ludo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ImageIcon logo = new ImageIcon("Ludo_icon.png");
-        
         frame.setIconImage(logo.getImage());
 
         // Create a split pane to separate the game board and right panel
