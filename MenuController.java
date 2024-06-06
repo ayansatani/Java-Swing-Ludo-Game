@@ -49,12 +49,12 @@ public class MenuController {
                 "- Click the dice to roll.\n" +
                 "- Click a token to move it after rolling the dice.\n\n" +
                 "Have fun playing Ludo!";
-        JOptionPane.showMessageDialog(null, helpMessage, "Ludo 4 - Help", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, helpMessage, "Ludo - Help", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void showAboutDialog() {
         String aboutMessage = "Ludo Game\nVersion 1.0\n\n Developers:\n Isha Gadani (ikgadani@gmail.com)\n Guntas Singh Chugh (guntas235@gmail.com)\n Ayan Satani (ayansatani123@gmail.com)";
-        JOptionPane.showMessageDialog(null, aboutMessage, "About Ludo", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, aboutMessage, "About Developers", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private static void exitApplication() {
