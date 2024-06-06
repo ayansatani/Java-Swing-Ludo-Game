@@ -13,7 +13,7 @@ public class GameBoard extends JPanel {
     private BlueHomeBase blueHomeBase;
 
     public GameBoard() {
-        setPreferredSize(new Dimension(800, 800));
+        setPreferredSize(new Dimension(700, 700));
         setBackground(Color.WHITE);
 
         redHomeBase = new RedHomeBase();
@@ -29,7 +29,7 @@ public class GameBoard extends JPanel {
     }
 
     private void drawBoard(Graphics g) {
-        int cellSize = getWidth() / BOARD_SIZE;
+        int cellSize = (getWidth() / BOARD_SIZE)-2;
 
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (int j = 0; j < BOARD_SIZE; j++) {
@@ -59,6 +59,6 @@ public class GameBoard extends JPanel {
         String text = "HOME";
         int x = (getWidth() - metrics.stringWidth(text)) / 2;
         int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
-        g.drawString(text, x, y);
+        g.drawString(text, x-15 , y+2 );
     }
 }
