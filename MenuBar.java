@@ -14,6 +14,8 @@ public class MenuBar {
 
        //introducing/creating new menu-items(menu options) for the menu bar
         JMenuItem New = new JMenuItem("New Game");
+        JMenuItem Connect = new JMenuItem("Connect");
+        JMenuItem Disconnect = new JMenuItem("Disconnect");
         JMenuItem Translate = new JMenuItem("Translate");
         JMenuItem Help = new JMenuItem("Help");
         JMenuItem About = new JMenuItem("About");
@@ -26,6 +28,8 @@ public class MenuBar {
 
         //adding menuitems to the menu bar
         menuBar.add(New);
+        menuBar.add(Connect);
+        menuBar.add(Disconnect);
         menuBar.add(Translate);
         menuBar.add(Help);
         menuBar.add(About);
