@@ -1,0 +1,15 @@
+
+1 June 2024
+Ayan Satani created the repository. Joined by Isha Gadani and Guntas Singh Chugh as contributors. Ayan made the initial commit as a 
+readme file stating the purpose of the repository.
+
+4 June 2024
+Guntas started working on the GUI for the game. It was mutually decided by the developers to follow the MVC(Model-View-Control) 
+architectural model, hence the name of the packages. Initially all the components for the GUI were initialised, stored and manipulated 
+in the 'View.Gameboard.java' file and compiled and run in 'Control.Main.java' but for the purpose of easy handling and maintenance of 
+the code 'View.Gameboard.java' was broken down into 5 classes under view package: RedHomeBase.java, BlueHomeBase.java, 
+YellowHomeBase.java, and GreenHomeBase.java. 
+
+6 June 2024
+Guntas added the ChatPanel.java(chat area), DicePanel.java(dice roll), and MenuBar.java(menu bar) upon the request of other 
+contributors. Functionality was added to help, about, and exit buttons on the menubar using Control.MenuController.java. 
