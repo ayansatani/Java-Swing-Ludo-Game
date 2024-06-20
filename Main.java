@@ -1,4 +1,4 @@
-package Control;
+package View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,7 @@ import View.MenuBar;
 import View.ChatPanel;
 import View.DicePanel;
 
+/* hello */
 public class Main {
     public static void main(String[] args) {
         GameBoard gameBoard = new GameBoard();
