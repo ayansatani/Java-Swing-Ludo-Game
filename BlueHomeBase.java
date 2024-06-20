@@ -1,4 +1,3 @@
-//bluhomebase.java
 package View;
 
 import java.awt.Color;
