@@ -8,7 +8,6 @@ import View.MenuBar;
 import View.ChatPanel;
 import View.DicePanel;
 
-/* hello */
 public class Main {
     public static void main(String[] args) {
         GameBoard gameBoard = new GameBoard();
@@ -36,6 +35,6 @@ public class Main {
         frame.getContentPane().add(splitPane);
         frame.pack();
         frame.setVisible(true);
-        frame.setResizable(false);
+        frame.setResizable(true);
     }
 }

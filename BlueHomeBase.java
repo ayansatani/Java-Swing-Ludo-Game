@@ -1,10 +1,10 @@
 package View;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 
 public class BlueHomeBase {
-    private static final Color BLUE_COLOR = new Color(34, 64, 154);
+    private static final Color BLUE_COLOR = new Color(52, 84, 184);
 
     public void draw(Graphics g, int cellSize) {
         g.setColor(BLUE_COLOR);
@@ -17,13 +17,20 @@ public class BlueHomeBase {
     }
 
     private void drawWhiteGrid(Graphics g, int cellSize, int offsetX, int offsetY) {
-        g.setColor(Color.WHITE);
+        // Load the image
+        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/View/Blue.jpg"));
+        Image image = backgroundImage.getImage();
+
+        // Draw the image in each cell
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
-                g.fillRect((offsetX + i) * cellSize, (offsetY + j) * cellSize, cellSize, cellSize);
+                int x = (offsetX + i) * cellSize;
+                int y = (offsetY + j) * cellSize;
+                g.drawImage(image, x, y, cellSize, cellSize, null);
             }
         }
 
+        // Draw the grid lines
         g.setColor(Color.BLACK);
         for (int i = 0; i <= 2; i++) {
             g.drawLine((offsetX + i) * cellSize, offsetY * cellSize, (offsetX + i) * cellSize, (offsetY + 2) * cellSize);
