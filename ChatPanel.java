@@ -19,6 +19,7 @@ public class ChatPanel extends JPanel {
         JTextField chatInput = new JTextField();
         JButton sendButton = new JButton("Send");
         JPanel inputPanel = new JPanel(new BorderLayout());
+        sendButton.setFocusable(false);//removes the rectangle from around the send button
         inputPanel.add(chatInput, BorderLayout.CENTER);
         inputPanel.add(sendButton, BorderLayout.EAST);
 
