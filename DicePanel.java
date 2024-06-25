@@ -13,6 +13,7 @@ public class DicePanel extends JPanel {
 
         // Dice Roll Button
         JButton rollDiceButton = new JButton("Roll Dice");
+        rollDiceButton.setFocusable(false);//removes the small rectangle from around the rolling button.
 
         // Dice Display
         diceDisplay = new JLabel("Dice: Roll-it", SwingConstants.CENTER);
