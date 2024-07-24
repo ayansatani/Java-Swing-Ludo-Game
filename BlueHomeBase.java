@@ -3,38 +3,25 @@ package View;
 import javax.swing.*;
 import java.awt.*;
 
-public class BlueHomeBase {
-    private static final Color BLUE_COLOR = new Color(52, 84, 184);
+public class BlueHomeBase extends JPanel {
+    private static final long serialVersionUID = 1L;
 
-    public void draw(Graphics g, int cellSize) {
-        g.setColor(BLUE_COLOR);
-        g.fillRect(9 * cellSize, 9 * cellSize, 6 * cellSize, 6 * cellSize);
-        g.fillRect(13 * cellSize, 8 * cellSize, cellSize, cellSize);
-        g.fillRect(9 * cellSize, 7 * cellSize, 5 * cellSize, cellSize);
-        g.fillRect(8 * cellSize, 12 * cellSize, cellSize, cellSize);
-
-        drawWhiteGrid(g, cellSize, 11, 11);
-    }
-
-    private void drawWhiteGrid(Graphics g, int cellSize, int offsetX, int offsetY) {
-        // Load the image
-        ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/View/Blue.jpg"));
-        Image image = backgroundImage.getImage();
-
-        // Draw the image in each cell
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                int x = (offsetX + i) * cellSize;
-                int y = (offsetY + j) * cellSize;
-                g.drawImage(image, x, y, cellSize, cellSize, null);
+	public BlueHomeBase() {
+        setLayout(new GridLayout(6, 6));
+        setPreferredSize(new Dimension(140, 140)); // Adjust size as needed
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                JButton button = new JButton();
+                if ((i==2 || i==3) && (j==2 || j==3)) {
+                    button.setBackground(Color.WHITE); // White for empty cells
+                } 
+                else {
+                	button.setBackground(new Color(34, 64, 154));
+                	button.setBorderPainted(false);
+                    button.setEnabled(false);
+                }
+                add(button);
             }
-        }
-
-        // Draw the grid lines
-        g.setColor(Color.BLACK);
-        for (int i = 0; i <= 2; i++) {
-            g.drawLine((offsetX + i) * cellSize, offsetY * cellSize, (offsetX + i) * cellSize, (offsetY + 2) * cellSize);
-            g.drawLine(offsetX * cellSize, (offsetY + i) * cellSize, (offsetX + 2) * cellSize, (offsetY + i) * cellSize);
         }
     }
 }
