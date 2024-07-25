@@ -15,9 +15,22 @@ public class VictoryBase extends JPanel {
 	                JButton button = new JButton();              
                     button.setBackground(Color.WHITE); // White for empty cells
                     button.setBorderPainted(false);
-                    if(i==1 && j == 1 ) {// remove the if statement if the whole victory block is to be made unclickable.
-                    	ImageIcon centre = new ImageIcon("home.png");
-                    	button.setIcon(centre);
+                    button.setFocusable(false);
+                    if(i==1 && j == 1) {
+                    	ImageIcon home = new ImageIcon("home.png");
+                    	button.setIcon(home);
+//                    } else if (i==0 && j== 1) {
+//                    	ImageIcon home = new ImageIcon("Yellow_home.png");
+//                    	button.setIcon(home);
+//                    }else if (i==1 && j== 0) {
+//                    	ImageIcon home = new ImageIcon("Red_home.png");
+//                    	button.setIcon(home);
+//                    }else if (i==1 && j== 2) {
+//                    	ImageIcon home = new ImageIcon("Blue_home.png");
+//                    	button.setIcon(home);
+//                    }else if (i==2 && j== 1) {
+//                    	ImageIcon home = new ImageIcon("Green_home.png");
+//                    	button.setIcon(home);
                     }
                     
 	                add(button);
@@ -25,3 +38,4 @@ public class VictoryBase extends JPanel {
 	        }
 	    }
 	}
+
