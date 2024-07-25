@@ -1,6 +1,5 @@
 package View;
 
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
@@ -12,27 +11,30 @@ public class MenuBar {
     public MenuBar() {
         menuBar = new JMenuBar();
 
-       //introducing/creating new menu-items(menu options) for the menu bar
+        // Introducing/creating new menu-items(menu options) for the menu bar
         JMenuItem New = new JMenuItem("New Game");
         JMenuItem Connect = new JMenuItem("Connect");
         JMenuItem Disconnect = new JMenuItem("Disconnect");
         JMenuItem Translate = new JMenuItem("Translate");
         JMenuItem Help = new JMenuItem("Help");
         JMenuItem About = new JMenuItem("About");
+        JMenuItem Feedback = new JMenuItem("Feedback");
         JMenuItem Exit = new JMenuItem("Exit");
 
-        //adding actionlisteners from menucotroller
+        // Adding action listeners from MenuController
         Help.addActionListener(MenuController.getHelpActionListener());
         About.addActionListener(MenuController.getAboutActionListener());
+        Feedback.addActionListener(MenuController.getFeedbackActionListener());
         Exit.addActionListener(MenuController.getExitActionListener());
 
-        //adding menuitems to the menu bar
+        // Adding menu items to the menu bar
         menuBar.add(New);
         menuBar.add(Connect);
         menuBar.add(Disconnect);
         menuBar.add(Translate);
         menuBar.add(Help);
         menuBar.add(About);
+        menuBar.add(Feedback);
         menuBar.add(Exit);
     }
 
