@@ -27,6 +27,7 @@ public class GameBoard extends JPanel {
                 JButton button = new JButton();
                 button.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                 button.setBackground(Color.WHITE);
+                button.setFocusable(false);
                 
                 buttons[i][j] = button;
                 add(button);
